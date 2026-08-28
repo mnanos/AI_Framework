@@ -2,13 +2,13 @@
 
 ## Project Structure & Module Organization
 
-This repository currently contains the implementation contract in `AI_FRAMEWORK_SPEC.md` and the project license. Treat the spec as authoritative until source files are added. The target application is a Python 3.12+ AI framework with source code under `app/`, tests under `tests/`, migrations under `migrations/`, helper scripts under `scripts/`, and contributor documentation under `docs/`.
+This repository implements the contract in `AI_FRAMEWORK_SPEC.md`. Treat the spec as authoritative for architecture and milestones. Runtime source code lives under `app/`, tests under `tests/`, migrations under `migrations/`, helper scripts under `scripts/`, and contributor documentation under `docs/`.
 
 Expected major modules include `app/api/` for FastAPI routes, `app/workflows/` for LangGraph workflows, `app/tools/` for tool descriptors and permission enforcement, `app/rag/` and `app/vectorstores/` for retrieval, `app/persistence/` for database access, and `app/observability/` for Langfuse and telemetry integration.
 
 ## Build, Test, and Development Commands
 
-No executable project tooling is present yet. When bootstrapping the repository, provide the Make targets required by the spec:
+Use `uv` and the Makefile for local development:
 
 - `make install`: install project dependencies.
 - `make dev`: run the local development server.
@@ -18,7 +18,7 @@ No executable project tooling is present yet. When bootstrapping the repository,
 - `make typecheck`: run `mypy app`.
 - `make compose-up` / `make compose-down`: manage local services.
 
-Until these exist, document any temporary setup commands in `README.md`.
+The Makefile keeps `uv` caches inside the repository for sandbox-friendly execution.
 
 ## Coding Style & Naming Conventions
 
